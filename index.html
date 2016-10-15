@@ -47,12 +47,9 @@ Pass-by-Reference means: The called method can change the value of the caller's 
 <li>It passes references to methods by value.</li>
 </ol>
 
-          <p><strong>Note</strong>: Strings are an exception, in java strings are immutable and they always create a new object.</p>
-
-<p>Java is actually pass-by-value for all variables running within a single VM. Pass-by-value means pass-by-variable-value. And that means pass-by-copy-of-the-variable!.</p>
-
-<p>Whether you are passing a primitive variable or the reference to an object; you are always passing a copy of bits in the variable. The called method then gets its own copy of the reference variable to do with it what it likes.But because two identical reference variables refer to the exact same object, if the called method modifies the object (by invoking setter methods, for example), the caller will see that the object the caller's original variable refers to has also been changed.</p>
-
+          <p>Whether you are passing a primitive variable or the reference to an object; you are always passing a copy of bits in the variable. The called method then gets its own copy of the reference variable to do with it what it likes.But because two identical reference variables refer to the exact same object, if the called method modifies the object (by invoking setter methods, for example), the caller will see that the object the caller's original variable refers to has also been changed.</p>
+<p><strong>Note</strong>: Strings are an exception, in java strings are immutable and they always create a new object.</p>
+          
 <h2>
 <a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
 
