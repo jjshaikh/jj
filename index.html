@@ -52,19 +52,17 @@ Pass-by-Reference means: The called method can change the value of the caller's 
           
 <h2>
 <a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
-
-<p>
-  <pre><code>  
-  public class JavaSemantics {
+  <pre><code>public class JavaSemantics {
     public static void main(String[] args) {
             ClassRoom classRoom = new ClassRoom(5, 5, 5);
                   System.out.println("Before magic " + classRoom.getWidth() + " " + 
-                                      classRoom.getHeight() + " " + classRoom.getLength());
+                         classRoom.getHeight() + " " + classRoom.getLength());
 
           // Passing the classRoom object as a reference to magic by value.
             magic(classRoom);
             System.out.println("After magic " + classRoom.getWidth() + " " + 
-                           classRoom.getHeight() + " " + classRoom.getLength());
+                   classRoom.getHeight() + " " + classRoom.getLength());
+   }
 }
 
 static void magic(ClassRoom classRoom) {
@@ -82,9 +80,6 @@ static void magic(ClassRoom classRoom) {
 }
 }
 </code></pre>
-
-          <br /><br >
-          
 <pre><code>class ClassRoom {
     private int width;
     private int height;
