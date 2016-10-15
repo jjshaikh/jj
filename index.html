@@ -65,7 +65,7 @@ Pass-by-Reference means: The called method can change the value of the caller's 
    }
 }
 
-static void magic(<typ>ClassRoom<typ/> classRoom) {
+static void magic(ClassRoom classRoom) {
 
     //Changing the original Object for which we got the reference as a value.
     classRoom.setWidth(10);
@@ -85,7 +85,7 @@ static void magic(<typ>ClassRoom<typ/> classRoom) {
     private int height;
     private int length;
 
-public ClassRoom(<typ>int</typ> width, <typ>int</typ> height, <typ>int</typ> length) {
+public ClassRoom(int width, int height, int length) {
     this.width = width;
     this.height = height;
     this.length = length;
@@ -119,8 +119,7 @@ public int getLength() {
 <pre><code>Output:
 Before magic 5 5 5
 Inside magic 20 20 20
-After magic 10 10 10
-     </code></pre>
+After magic 10 10 10</code></pre>
         
 </section>
 
