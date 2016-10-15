@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Java by jjshaikh</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Java</h1>
+        <h2>Pass-by-Value vs. Pass-by-Reference</h2>
+        <a href="https://github.com/jjshaikh/jj" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="java-pass-by-reference-or-pass-by-value" class="anchor" href="#java-pass-by-reference-or-pass-by-value" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Java Pass-by-Reference or Pass-by-Value</h1>
+
+<ol>
+<li><p>Pass-by-Value:
+Pass-by-Value means: The called method can't change the value of the caller's method.</p></li>
+<li><p>Pass-by-Reference:
+Pass-by-Reference means: The called method can change the value of the caller's method.</p></li>
+</ol>
+
+<p>When we talk about Pass-by-Reference vs. Pass-by-Value, we actually need to see what semantics the language is using.</p>
+
+<h2>
+<a id="two-things-to-understand" class="anchor" href="#two-things-to-understand" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Two things to understand.</h2>
+
+<ol>
+<li>Java manipulate objects by their references.</li>
+<li>It passes references to methods by value.</li>
+</ol>
+
+<p>**Note: Strings are an exception, in java strings are immutable and they always create a new object.</p>
+
+<p>Java is actually pass-by-value for all variables running within a single VM. Pass-by-value means pass-by-variable-value. And that means pass-by-copy-of-the-variable!.</p>
+
+<p>Whether you are passing a primitive variable or the reference to an object; you are always passing a copy of bits in the variable. The called method then gets its own copy of the reference variable to do with it what it likes.But because two identical reference variables refer to the exact same object, if the called method modifies the object (by invoking setter methods, for example), the caller will see that the object the caller's original variable refers to has also been changed.</p>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<p>public class JavaSemantics {
+    public static void main(String[] args) {
+            ClassRoom classRoom = new ClassRoom(5, 5, 5);
+                  System.out.println("Before magic " + classRoom.getWidth() + " " + 
+                                      classRoom.getHeight() + " " + classRoom.getLength());</p>
+
+<pre><code>            // Passing the classRoom object as a reference to magic by value.
+            magic(classRoom);
+            System.out.println("After magic " + classRoom.getWidth() + " " + 
+                           classRoom.getHeight() + " " + classRoom.getLength());
+}
+
+static void magic(ClassRoom classRoom) {
+
+    //Changing the original Object for which we got the reference as a value.
+    classRoom.setWidth(10);
+    classRoom.setHeight(10);
+    classRoom.setLength(10);
+
+    // Assigning classRoom reference to a new ClassRoom object.
+    classRoom = new ClassRoom(20, 20, 20);
+
+    System.out.println("Inside magic " + classRoom.getWidth() + " " + 
+                               classRoom.getHeight() + " " + classRoom.getLength());
+}
+</code></pre>
+
+<p>}</p>
+
+<p>class ClassRoom {
+    private int width;
+    private int height;
+    private int length;</p>
+
+<pre><code>public ClassRoom(int width, int height, int length) {
+    this.width = width;
+    this.height = height;
+    this.length = length;
+}
+
+public void setWidth(int width) {
+    this.width = width;
+}
+
+public void setHeight(int height) {
+    this.height = height;
+}
+
+public void setLength(int length) {
+    this.length = length;
+}
+
+public int getWidth() {
+    return width;
+}
+
+public int getHeight() {
+    return height;
+}
+
+public int getLength() {
+    return length;
+}
+</code></pre>
+
+<p>}</p>
+
+<p>Output:
+Before magic 5 5 5
+Inside magic 20 20 20
+After magic 10 10 10</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/jjshaikh/jj/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/jjshaikh/jj/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/jjshaikh/jj"></a> is maintained by <a href="https://github.com/jjshaikh">jjshaikh</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
