@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Inheritance</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Inheritance</h1>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="inheritance" class="anchor" href="#inheritance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inheritance</h1>
+
+<p>Two decades ago when Java was born, it brought a concept of Inheritance. What is inheritance and what are the rules of inheritance?</p>
+
+<p>Whether you are passing a primitive variable or the reference to an object; you are always passing a copy of bits in the variable. The called method then gets its own copy of the reference variable to do with it what it likes.But because two identical reference variables refer to the exact same object, if the called method modifies the object (by invoking setter methods, for example), the caller will see that the object the caller's original variable refers to has also been changed. 
+Inheritance allows a class to be a subclass of a superclass and thereby inherit public and protected variables and methods of the superclass. Inheritance is a key concept that underlies IS-A, polymorphism, overriding, overloading, and casting. All classes (except class Object) are subclasses of type Object, and therefore 
+they inherit Object's methods.
+</p>
+<p><strong>Rule</strong>: Subclasses know their parent (super classes) that they inherit from but super classes doesn't know anything about the sub classes.</p>
+
+<p>Practical joke: 
+Two dacades ago Java was born and brought the cocept of Inheritance with it. which states childs can know about their parents but parents doesn't know a thing about 
+their childs. Wonder it's 20th century and seriously parents doesn't know who their childs are :D.
+</p>       
+</section>
+
+        <aside id="sidebar">
+          <p class="repo-owner"><a href="https://github.com/jjshaikh/jj"></a> is maintained by <a href="https://github.com/jjshaikh">Junaid Jabbar Shaikh</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
