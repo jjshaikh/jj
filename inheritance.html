@@ -34,12 +34,19 @@
 <p>Inheritance allows a class to be a subclass of a superclass and thereby inherit public and protected variables and methods of the superclass. Inheritance is a key concept that underlies IS-A, polymorphism, overriding, overloading, and casting. All classes (except class Object) are subclasses of type Object, and therefore 
 they inherit Object's methods.
 </p>
-<p><strong>Rule</strong>: Subclasses know their parent (super classes) that they inherit from but super classes doesn't know anything about the sub classes.</p>
-
-          <p><strong>Practical joke</strong>: 
-Two dacades ago Java was born and brought the cocept of Inheritance with it. which states childs can know about their parents but parents doesn't know a thing about 
-their childs. Wonder it's 20th century and seriously parents doesn't know who their childs are :D.
-</p>       
+          <p><strong>Rules</strong>:</p>
+          <p><strong>.</strong>Subclasses know their parent (super classes) that they inherit from but super classes doesn't know anything about the sub classes.</p>
+          <p><strong>.</strong>An Interface can <strong>extend</strong> "n" number of interfaces / abstract classes</p>
+          <p><strong>.</strong>An Abstract class can <strong>implement</strong> "n" number of interfaces but can only <strong>extend</strong> one Abstract class, in fact an Abstract class can as well extend a concerete class.</p>
+          
+          <p>Now you question how on the earth would that work (Abstract class implementing "n" number of interfaces?). Well that's a very smart question. As a JAVA developer you must know this <strong>feed in your brains</strong> when JVM looks at an Interface it sees an abstract behavior in it. 
+          Wow! Now that's a lot to process right?. Let's have a look at a picture below:</p>
+          
+          <p>![[https://github.com/jjshaikh/jj/blob/gh-pages/images/CompilerAtInterface.JPG|alt=wow!]].</p>
+          
+          <p>Now we know for sure right?. So, it's safe to say now that there is no problem for an abstract class to implement intefaces and extend classes (abstract/concerete).
+          As soon as a concerete class extends that abstract class, it has to implement all of the (abstract) methods that it's bringing with itself.</p>
+          
 </section>
 
         <aside id="sidebar">
